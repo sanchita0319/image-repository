@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<h1>Public</h1>
+{% for name in publicNames %}
+ <img src="{{url_for('displayPublic', name=name)}}"/>
+{% endfor %}
+
+<h1>Private</h1>
+{% for item in privateNames %}
+ <img src = "{{url_for('displayPrivate', name=item)}}"/>
+{% endfor %}
+
+{% endblock %}
